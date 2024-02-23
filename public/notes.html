@@ -42,40 +42,8 @@
       </div>
     </div>
   </div>
-  <script src="/assets/js/index.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const saveNoteBtn = document.querySelector('.save-note');
-      saveNoteBtn.addEventListener('click', function() {
-        const noteTitle = document.querySelector('.note-title').value;
-        const noteText = document.querySelector('.note-textarea').value;
-        saveNote(noteTitle, noteText);
-      });
 
-      function saveNote(title, text) {
-        fetch('', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ title, text })
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to save note');
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log('Note saved successfully:', data);
-          // You can add further logic here, such as displaying a success message
-        })
-        .catch(error => {
-          console.error('Error saving note:', error);
-          // You can add error handling logic here, such as displaying an error message
-        });
-      }
-    });
-  </script>
+  <script src="/assets/js/index.js"></script>
+  
 </body>
 </html>

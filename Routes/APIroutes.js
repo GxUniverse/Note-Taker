@@ -1,5 +1,6 @@
 const app = require('express').Router()
-const dbFile = require("../db/db.json")
+const dbFile = "./db/db.json"
+ 
 const fs = require('fs');
 
 app.get('/api/notes', (req, res) => {
