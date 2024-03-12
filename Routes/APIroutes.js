@@ -3,7 +3,7 @@ const dbFile = "./db/db.json"
  
 const fs = require('fs');
 
-app.get('/public/notes', (req, res) => {
+app.get('/api/notes', (req, res) => {
     fs.readFile(dbFile, 'utf8', (err, data) => {
         if (err) throw err;
         const notes = JSON.parse(data);
@@ -12,7 +12,7 @@ app.get('/public/notes', (req, res) => {
 });
 
 
-app.post('/public/notes', (req, res) => {
+app.post('/api/notes', (req, res) => {
     fs.readFile(dbFile, 'utf8', (err, data) => {
         if (err) throw err;
         const notes = JSON.parse(data);
@@ -28,7 +28,7 @@ app.post('/public/notes', (req, res) => {
 });
 
 // delete a note
-app.delete('/public/notes/:id', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
     const noteId = req.params.id;
     fs.readFile(dbFile, 'utf8', (err, data) => {
         if (err) throw err;
